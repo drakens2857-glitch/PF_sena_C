@@ -1,6 +1,33 @@
+# Entorno Virtual
 venv/
-*.pyc
-__pycache__/
-db.sqlite3
+env/
+ENV/
+
+# Archivos de configuración sensible (¡MUY IMPORTANTE!)
 .env
 *.json
+!requirements.json  # Si usas este nombre para otra cosa, pero por seguridad bloqueamos todos los JSON
+
+# Base de datos local (SQLite)
+*.sqlite3
+
+# Python (Archivos temporales)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Django
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+static/
+
+# IDEs (VS Code, PyCharm)
+.vscode/
+.idea/
+
+# Sistema Operativo
+.DS_Store
+Thumbs.db
