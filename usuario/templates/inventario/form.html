@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Producto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="container mt-5">
+
+    <h2>{% if producto %}Editar{% else %}Nuevo{% endif %} producto</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input name="nombre" class="form-control mb-2" placeholder="Nombre" value="{{ producto.nombre|default:'' }}"
+            required>
+
+        <input name="precio" type="number" step="0.01" class="form-control mb-2" placeholder="Precio"
+            value="{{ producto.precio|default:'' }}" required>
+
+        <input name="cantidad" type="number" class="form-control mb-2" placeholder="Cantidad"
+            value="{{ producto.cantidad|default:'' }}" required>
+
+        <button class="btn btn-success">Guardar</button>
+        <a href="{% url 'inventario_lista' %}" class="btn btn-secondary">Volver</a>
+    </form>
+
+</body>
+
+</html>
