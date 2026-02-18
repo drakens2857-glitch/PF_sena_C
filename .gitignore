@@ -8,9 +8,6 @@ ENV/
 *.json
 !requirements.json  # Si usas este nombre para otra cosa, pero por seguridad bloqueamos todos los JSON
 
-# Base de datos local (SQLite)
-*.sqlite3
-
 # Python (Archivos temporales)
 __pycache__/
 *.py[cod]
